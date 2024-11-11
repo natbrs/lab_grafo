@@ -3,7 +3,6 @@
 int main(){
     int matriz[maxVert][maxVert];
     int n;
-
     lerMatriz(matriz, &n);
     printArestas(matriz, n);
     printf("É um digrafo? %s\n", Digrafo(matriz, n) ? "Sim" : "Não");

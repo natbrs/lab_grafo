@@ -47,25 +47,22 @@ void calcGrau(int matriz[maxVert][maxVert], int n){
 
 int Conexo(int matriz[maxVert][maxVert], int n){
     int visitado[maxVert]={0};
-    int fila[maxVert], inicio=0, fim=0;
-
+    int fila[maxVert],inicio=0,fim=0;
     visitado[0]=1;
     fila[fim++]=0;
     while(inicio<fim){
-        int v=fila[inicio++];
-        for(int i=0;i<n;i++){
-            if(matriz[v][i]==1 && !visitado[i]){
-              visitado[i]=1;
-              fila[fim++]=i;
+        int v = fila[inicio++];
+        for(int i=0; i<n; i++){
+            if(matriz[v][i] == 1 && !visitado[i]){
+                visitado[i] = 1;
+                fila[fim++] = i;
             }
         }
-    }
-    for(int i=0; i<n; i++){
-        if(visitado[i]){
+    } for(int i=0; i<n; i++){
+        if(!visitado[i]){
             return 0;
         }
-    }
-    return 1;
+    } return 1;
 }
 
 int Ciclico(int matriz[maxVert][maxVert], int n, int visitado[], int v, int parent){
@@ -96,13 +93,15 @@ void verCiclo(int matriz[maxVert][maxVert], int n){
 
 void printListaAdjacencias(int matriz[maxVert][maxVert], int n){
     printf("Lista de adjacencias:\n");
-    for(int i=0; i<n;i++){
+    for(int i=0; i<n; i++){
         printf("%d: ", i);
+        int first = 1;
         for(int j=0; j<n; j++){
             if(matriz[i][j]==1){
+                if (!first) printf(", ");
                 printf("%d", j);
+                first=0;
             }
-        }
-        printf("\n");
+        }printf("\n");
     }
 }

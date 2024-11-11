@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/nat/Documents/workspace/ED/aula-30-10/laboratorio/grafo",
+      "program": "/Users/nat/Documents/workspace/ED/aula-30-10/laboratorio/grafo/build/Debug/outDebug"
+    }
+  ]
+}
