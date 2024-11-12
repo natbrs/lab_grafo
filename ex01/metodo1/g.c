@@ -51,7 +51,7 @@ int Conexo(int matriz[maxVert][maxVert], int n){
     visitado[0]=1;
     fila[fim++]=0;
     while(inicio<fim){
-        int v = fila[inicio++];
+        int v=fila[inicio++];
         for(int i=0; i<n; i++){
             if(matriz[v][i] == 1 && !visitado[i]){
                 visitado[i] = 1;
@@ -77,8 +77,7 @@ int Ciclico(int matriz[maxVert][maxVert], int n, int visitado[], int v, int pare
                 return 1;
             }
         }
-    }
-    return 0;
+    } return 0;
 }
 
 void verCiclo(int matriz[maxVert][maxVert], int n){
@@ -90,7 +89,6 @@ void verCiclo(int matriz[maxVert][maxVert], int n){
         printf("O grafo é aciclico.\n");
     }
 }
-
 void printListaAdjacencias(int matriz[maxVert][maxVert], int n){
     printf("Lista de adjacencias:\n");
     for(int i=0; i<n; i++){
